@@ -4,12 +4,24 @@ import android.support.v7.app.ActionBarActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import kotlinsample.bruce.me.kotlinsample.model.*;
 
 public class MyActivity : ActionBarActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my)
+        val list = listOf("a", "b", "c", "d")
+        list.map { x -> println("------------$x") }
+        val numbers = 1..10
+        numbers.filter { it > 5 }.map { println(it) }
+        val dict = mapOf( "name" to "bruce", "gender" to "male", "compant" to "ytx" )
+        for ((k, v) in dict) {
+            println("key: $k  val: $v")
+        }
+
+        val user = User("bruce", 26, "ytx", "male")
+        println(user)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
